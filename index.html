@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Книги — Герман</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #e65c00;
+    --border: #e0e0e0;
+    --muted: #666;
+    --card-bg: #f8f8f8;
+    --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+  .container { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .book-list { display: flex; flex-direction: column; gap: 1rem; }
+  .book-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s, box-shadow 0.15s;
+    border: 1px solid var(--border);
+  }
+  .book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .book-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  .book-info h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .book-info p {
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .book-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+  }
+  footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📚 Книги</h1>
+  <p class="subtitle">Переводы технических книг — Герман</p>
+
+  <div class="book-list">
+    <a href="hermes-agent-guide-ru/" class="book-card">
+      <div class="book-icon">🤖</div>
+      <div class="book-info">
+        <h2>Hermes Agent Guide</h2>
+        <p>Руководство по AI-агентам, навыкам и инструментам Hermes Agent</p>
+        <div class="book-meta">Nous Research · 77 стр. · перевод июнь 2026</div>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    Сделано <a href="https://github.com/dimkurilo">dimkurilo</a> с помощью Hermes Agent
+  </footer>
+</div>
+</body>
+</html>
