@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>hermes-agent-book</title>
+  <title>Hermes Agent: Полное руководство</title>
   <style>
 /* ════════════════════════════════════════
    Variables
@@ -453,34 +453,28 @@ main figcaption {
    Responsive
    ════════════════════════════════════════ */
 @media (max-width: 900px) {
-  :root { --font-size: 16px; }
+  :root { --font-size: 16px; --max-width: 100%; }
+  body { overflow-x: hidden; }
   .hamburger { display: flex; }
   .sidebar { transform: translateX(-100%); transition: transform 0.25s ease; width: 100%; max-width: 320px; }
   .sidebar.open { transform: translateX(0); }
   .sidebar-overlay.open { display: block; }
-  .content { margin-left: 0; padding: 0.75rem 1rem; padding-top: 4rem; }
-  .content-inner { max-width: 100%; }
+  .content { margin-left: 0; padding: 0.75rem 1rem; padding-top: 4.5rem; overflow-x: hidden; }
+  .content-inner { max-width: 100%; overflow-x: hidden; }
   body.sidebar-open { overflow: hidden; }
-  html.sidebar-open { overflow: hidden; height: 100%; }
+  main { overflow-x: hidden; }
   main table { font-size: 0.78em; display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   main pre { font-size: 0.72em; white-space: pre-wrap; word-break: break-word; }
   main img { max-width: 100%; height: auto; }
   main blockquote { margin: 1em 0; padding: 0.75em 1em; }
   .sidebar nav { -webkit-overflow-scrolling: touch; }
 }
-@media (max-width: 600px) {
-  :root { --font-size: 16px; --max-width: 100%; }
-  .content { padding: 0.5rem 0.75rem; padding-top: 3.5rem; }
-  main h1 { font-size: 1.5rem; }
-  main h2 { font-size: 1.2rem; }
-  main pre { font-size: 0.7em; white-space: pre-wrap; word-break: break-word; }
-}
 @media (max-width: 480px) {
   :root { --font-size: 15px; }
-  .content { padding: 0.5rem 0.6rem; padding-top: 3rem; }
+  .content { padding: 0.5rem 0.75rem; padding-top: 3.5rem; }
   .sidebar { max-width: 100%; }
-  main h1 { font-size: 1.35rem; }
-  main h2 { font-size: 1.1rem; }
+  main h1 { font-size: 1.4rem; }
+  main h2 { font-size: 1.15rem; }
   main table { font-size: 0.7em; }
 }
 
@@ -503,7 +497,7 @@ main figcaption {
 
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
-    <a href="#" class="title">hermes-agent-book</a>
+    <a href="#" class="title">Hermes Agent: Полное руководство</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">◐</button>
   </div>
   <nav>
@@ -558,7 +552,7 @@ main figcaption {
   <div class="content-inner">
     
     <header>
-      <h1 class="title">hermes-agent-book</h1>
+      <h1 class="title">Hermes Agent: Полное руководство</h1>
             <div class="metadata">
                   </div>
     </header>
@@ -1789,7 +1783,7 @@ Hermes, а затем позволить Hermes постоянно улучша�
 режиме: он извлекает этот повторяющийся паттерн задачи в файл Навыка. Вы
 найдете новый markdown-файл в /.hermes/skills/, который будет выглядеть
 примерно так:</p>
-<h1 id="github-daily-digest">GitHub Daily Digest</h1>
+<h2 id="github-daily-digest">GitHub Daily Digest</h2>
 <h2 id="условия-запуска">Условия запуска</h2>
 <p>Пользователь упоминает «уведомления GitHub», «ежедневная сводка» и
 т.д.</p>
@@ -1911,7 +1905,7 @@ Hermes одновременно вызывать несколько LLM, син�
 инструментов). Инструменты сгруппированы по функциям и
 включаются/отключаются в config.yaml по мере необходимости:</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Пример config.yaml</span></span>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Пример config.yaml</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toolsets</span><span class="kw">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> web</span><span class="co">          # веб-поиск</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> terminal</span><span class="co">     # команды терминала</span></span>
@@ -1943,7 +1937,7 @@ AI-агентами и внешними инструментами. Hermes по�
 базы данных и многое другое.</p>
 <p>Интеграция проста — добавьте блок конфигурации в config.yaml:</p>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Подключение к MCP-серверу GitHub</span></span>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Подключение к MCP-серверу GitHub</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcp_servers</span><span class="kw">:</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">github</span><span class="kw">:</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> npx</span></span>
@@ -2053,7 +2047,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="
 <h2 id="настройте-llm-бэкенд">2 Настройте LLM-бэкенд</h2>
 <p>После установки отредактируйте файл конфигурации:</p>
 <div class="sourceCode" id="cb4"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Расположение файла конфигурации</span></span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Расположение файла конфигурации</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/.hermes/config.yaml</span></span></code></pre></div>
 <p>Введите ваш API-ключ модели (о том, как выбрать модель, мы расскажем
 чуть позже).</p>
@@ -2144,7 +2138,7 @@ config.yaml.</p>
 одном файле: <code>~/.hermes/config.yaml</code>.</p>
 <p>Минимальная рабочая конфигурация выглядит так:</p>
 <div class="sourceCode" id="cb7"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ~/.hermes/config.yaml</span></span>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">## ~/.hermes/config.yaml</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model</span><span class="kw">:</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">provider</span><span class="kw">:</span><span class="at"> openrouter</span><span class="co">        # Поставщик модели</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">api_key</span><span class="kw">:</span><span class="at"> sk-or-xxxxx</span><span class="co">        # Ваш API-ключ</span></span>
@@ -2530,33 +2524,34 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1">
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>description: Enforce a consistent Git commit message format</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>version: &quot;1.0.0&quot;</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>___</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Git Commit Style</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trigger</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>Activate when the user asks me to commit code, write a commit message, or review commit history.</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rules</span></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### Commit Message Format</span></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First line: type(scope): summary (50 chars max)</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Blank line</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Body: explain WHY, not WHAT</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### Type Enum</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>feat: new feature</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>fix: bug fix</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>refactor: restructure (no behavior change)</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>docs: documentation</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>test: tests</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>chore: build/toolchain</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Constraints</span></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Body in plain language, types in English</span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Don&#39;t write &quot;modified XX file&quot; - that&#39;s noise</span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>One commit, one thing</span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example</span></span></code></pre></div>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Git Commit Style</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trigger</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>Activate when the user asks me to commit code, write a commit message, or review commit history.</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rules</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### Commit Message Format</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>First line: type(scope): summary (50 chars max)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Blank line</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Body: explain WHY, not WHAT</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="fu">### Type Enum</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>feat: new feature</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>fix: bug fix</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>refactor: restructure (no behavior change)</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>docs: documentation</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>test: tests</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>chore: build/toolchain</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Constraints</span></span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Body in plain language, types in English</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Don&#39;t write &quot;modified XX file&quot; - that&#39;s noise</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>One commit, one thing</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example</span></span></code></pre></div>
 <p>feat(auth): add WeChat QR code login</p>
 <p>Previously users could only log in with a phone number, which meant
 WeChat users had to bind a phone first. Now they scan a QR code and
@@ -2672,26 +2667,27 @@ class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1">
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>description: Three-pass proofreading for articles</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>version: &quot;1.0.0&quot;</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>___</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Article Proofreading</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trigger</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>Activate when the user mentions &quot;proofread,&quot; &quot;reduce AI tone,&quot; &quot;too AI-like,&quot; or &quot;polish.&quot;</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proofreading Flow</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pass 1: Fact Check</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verify all data, dates, product names</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Flag anything uncertain</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pass 2: Style Check</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Remove AI-favorite phrases (firstly/secondly/in conclusion)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Break up AI sentence patterns</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Replace formal vocabulary with conversational language</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pass 3: Detail Polish</span></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep sentences to 15-25 words</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep paragraphs to 3-5 lines on a phone screen</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bold ~10 key sentences for scanability</span></code></pre></div>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Article Proofreading</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trigger</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>Activate when the user mentions &quot;proofread,&quot; &quot;reduce AI tone,&quot; &quot;too AI-like,&quot; or &quot;polish.&quot;</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Proofreading Flow</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pass 1: Fact Check</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Verify all data, dates, product names</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Flag anything uncertain</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pass 2: Style Check</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Remove AI-favorite phrases (firstly/secondly/in conclusion)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Break up AI sentence patterns</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Replace formal vocabulary with conversational language</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### Pass 3: Detail Polish</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep sentences to 15-25 words</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Keep paragraphs to 3-5 lines on a phone screen</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bold ~10 key sentences for scanability</span></code></pre></div>
 <p>Скопируйте этот файл в /.hermes/skills/proofreading/SKILL.md, и
 Hermes сможет использовать его сразу. Никаких изменений формата, никаких
 адаптеров API — все используют markdown с одной и той же семантической
@@ -2773,7 +2769,7 @@ stdio и HTTP</h2>
 <p>Конфигурация указывается в разделе <code>mcp_servers</code> файла
 <code>config.yaml</code>:</p>
 <div class="sourceCode" id="cb16"><pre
-class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Режим stdio</span></span>
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Режим stdio</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcp_servers</span><span class="kw">:</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">github</span><span class="kw">:</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">command</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;npx&quot;</span></span>
@@ -2781,7 +2777,7 @@ class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb16-1"><a href=
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">env</span><span class="kw">:</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">GITHUB_PERSONAL_ACCESS_TOKEN</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;ghp_xxxxx&quot;</span></span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Режим HTTP</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co">## Режим HTTP</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mcp_servers</span><span class="kw">:</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">remote-tools</span><span class="kw">:</span></span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">url</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;https://your-server.com/mcp&quot;</span></span>
@@ -4127,7 +4123,6 @@ Website</p>
     sidebar.classList.toggle('open');
     overlay.classList.toggle('open');
     document.body.classList.toggle('sidebar-open');
-    document.documentElement.classList.toggle('sidebar-open');
   }
   hamburger.addEventListener('click', toggleSidebar);
   overlay.addEventListener('click', toggleSidebar);
